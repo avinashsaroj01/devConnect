@@ -19,9 +19,8 @@ body {
         height: 12vh;
 
 }
-
 .homepage {
-  
+
 }
 .hero{
     
@@ -44,7 +43,6 @@ body {
   position: sticky;
   height: 10vh;
 }
-
  /* Registeration page */
  .regPage{
   display: flex ;
@@ -61,6 +59,27 @@ body {
   flex-wrap: wrap;
  }
  .regFormDiv form {
+    display:grid;
+    
+ }
+
+   /* Login form */
+
+    .loginPage{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+.loginFormDiv{
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+ }
+ .loginFormDiv form {
     display:grid;
     
  }
