@@ -19,6 +19,45 @@ body {
         height: 12vh;
 
 }
+.homepage {
+
+}
+.hero{
+    
+  font-size: 5rem;
+}
+.subText{
+  font-size: 2rem;
+}
+.main{
+  height: 78vh;
+  background-color: lightgreen;
+}
+.footer {
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10;
+  bottom: 0;
+  position: sticky;
+  height: 10vh;
+}
+
+
+.App{
+  height: 100vh;
+  background-color: pink;
+}
+.navbar{
+
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: burlywood;
+        height: 12vh;
+
+}
 
 .homepage {
   
