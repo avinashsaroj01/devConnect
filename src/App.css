@@ -43,47 +43,6 @@ body {
   position: sticky;
   height: 10vh;
 }
-
-
-.App{
-  height: 100vh;
-  background-color: pink;
-}
-.navbar{
-
-    display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: burlywood;
-        height: 12vh;
-
-}
-
-.homepage {
-  
-}
-.hero{
-    
-  font-size: 5rem;
-}
-.subText{
-  font-size: 2rem;
-}
-.main{
-  height: 78vh;
-  background-color: lightgreen;
-}
-.footer {
-  background-color: beige;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10;
-  bottom: 0;
-  position: sticky;
-  height: 10vh;
-}
-
  /* Registeration page */
  .regPage{
   display: flex ;
@@ -100,6 +59,27 @@ body {
   flex-wrap: wrap;
  }
  .regFormDiv form {
+    display:grid;
+    
+ }
+
+   /* Login form */
+
+    .loginPage{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+.loginFormDiv{
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+ }
+ .loginFormDiv form {
     display:grid;
     
  }
