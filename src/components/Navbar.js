@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "1.5rem",
-        backgroundColor: "burlywood",
-      }}
+    <div className="navbar"
     > 
       <div>
         <h2>Developers Connect</h2>
