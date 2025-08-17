@@ -6,6 +6,7 @@ import Developers from "./pages/Developers";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
+import DeveloperDetails from "./pages/DeveloperDetails";
 function App() {
   return (
     <div className="App">
@@ -13,10 +14,11 @@ function App() {
 
       <main className="main">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/developers" element={<Developers />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/developers" element={<Developers />} />
+          <Route exact path="/developers/:id" element={<DeveloperDetails />} />
         </Routes>
       </main>
 

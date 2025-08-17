@@ -110,7 +110,7 @@ body {
      margin: 1rem;
   }
 .devItem{
-     width: 90%;
+     width: 60%;
      height: 60vh;
      background-color: rgb(4, 118, 88);
      display: flex;
@@ -131,5 +131,42 @@ body {
        border-radius: 10px;
        padding: 0.5rem;
        margin-bottom: 1rem;
+       display: flex;
+       justify-content:flex-start;
+       align-items: center;
+       column-gap: 20px;
+}
+
+.devInfo img{
+   
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+                  
 }
  
+ /* Developers detatis page */
+ .devDetails{
+    display: flex;
+    align-items: center;
+    /* justify-content:center; */
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+ }
+ .devDetails div{
+     
+      height: fit-content;
+      width: 30%;
+      background-color: rgb(165, 164, 151);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+
+ }
+ .devDetails h1{
+    
+    height: fit-content;
+    width: fit-content;
+    margin-top: 1rem;
+ }
