@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { developers } from "../data";
+import { useNavigate } from "react-router-dom";
+import { findByLabelText } from "@testing-library/dom";
+import DeveloperDetails from "./DeveloperDetails";
 function Developers() {
+  const navigate = useNavigate();
   const [searchText, setSearchText] = useState("");
   const [usersData, setUsersData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const handleSearch = (e) => {
     setSearchText(e.target.value);
     console.log("SearchText", searchText);
@@ -10,9 +15,10 @@ function Developers() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users"
+          "https://68a15c046f8c17b8f5d9a486.mockapi.io/api/devconnect"
         );
 
         if (!response.ok) {
@@ -23,6 +29,8 @@ function Developers() {
         setUsersData(data);
       } catch (error) {
         console.log("Error fetching data", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -31,45 +39,59 @@ function Developers() {
 
   return (
     <div className="devList">
-      <div style={{ width: "50%" }}>
-        <h1>Developer List</h1>
-
-        <div className="devItem">
-          {usersData
-            .filter(
-              (devs) =>
-                searchText.length === 0 ||
-                devs.name.toLowerCase().includes(searchText.toLowerCase())
-            )
-            .map((item) => {
-              return (
-                <div key={item.id} className="devInfo">
-                  {<h3 className="name">{item.name}</h3>}
-                  {/* {<p className="email">Email : {item.email}</p>}
-                  {<p className="skills">{item.username}</p>}
-                  {<p className="skills">Street : {item.address.street}</p>}
-                  {<p className="skills">City : {item.address.city}</p>}
-                  {<p className="skills">Company : {item.company.name}</p>}
-                  {
-                    <p className="skills">
-                      Company Website : {item.website}
-                    </p>
-                  } */}
-                </div>
-              );
-            })}
-          .
+      {loading ? (
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h1> Loading...</h1>
         </div>
-      </div>
+      ) : (
+        <>
+          <div style={{ width: "50%" }}>
+            <h1>Developer List</h1>
 
-      <section>
-        <input
-          type="text"
-          value={searchText}
-          onChange={handleSearch}
-          placeholder="Search Developers..."
-        />
-      </section>
+            <div className="devItem">
+              {usersData
+                .filter(
+                  (devs) =>
+                    searchText.length === 0 ||
+                    devs.name.toLowerCase().includes(searchText.toLowerCase())
+                )
+                .map((item) => {
+                  return (
+                    <div
+                      key={item.id}
+                      className="devInfo"
+                      onClick={() =>
+                        navigate(`/developers/${item.id}`, { state: item })
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img src={item.avatar} alt="" />
+                      {<h3 className="name">{item.name}</h3>}
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+
+          <section>
+            <input
+              type="text"
+              value={searchText}
+              onChange={handleSearch}
+              placeholder="Search Developers..."
+            />
+          </section>
+        </>
+      )}
+
     </div>
   );
 }

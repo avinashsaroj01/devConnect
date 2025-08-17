@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="navbar"
     > 
-      <div>
+      <div style={{ cursor:'pointer'}} onClick={()=>navigate('/')}>
         <h2>Developers Connect</h2>
       </div>
 
