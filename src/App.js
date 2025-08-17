@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import DeveloperDetails from "./pages/DeveloperDetails";
+import DeveloperPosts from "./pages/DeveloperPosts";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/developers" element={<Developers />} />
           <Route exact path="/developers/:id" element={<DeveloperDetails />} />
+          <Route exact path="/posts/:id" element={<DeveloperPosts/>} />
         </Routes>
       </main>
 
